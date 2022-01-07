@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_signaturit","access.signaturit","model_wizard_signaturit","base.group_user",1,1,1,1
+"access_signaturit","access.signaturit","model_signaturit_document","base.group_user",1,1,1,1

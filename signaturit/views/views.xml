@@ -1,0 +1,42 @@
+<odoo>
+        <record id="view_signaturit_tree" model="ir.ui.view">
+            <field name="name">signaturit.document.tree</field>
+            <field name="model">signaturit.document</field>
+            <field name="arch" type="xml">
+                <tree string="Signaturit Documents">
+                    <field name="name"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="signaturit_action" model="ir.actions.act_window">
+            <field name="name">Send to Signaturit</field>
+            <field name="res_model">wizard.signaturit</field>
+            <field name="view_mode">form</field>
+            <field name="context">{'search_default_all': 1}</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_signaturit" action="signaturit_action" parent="base.menu_automation" sequence="10"/>
+
+
+        <record id="signaturit_action_load" model="ir.actions.act_window">
+            <field name="name">Load from Signaturit</field>
+            <field name="res_model">signaturit.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="context">{'search_default_all': 1}</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_signaturit_load" action="signaturit_action_load" parent="base.menu_automation" sequence="5"/>
+
+        <record id="signaturit_document_action" model="ir.actions.act_window">
+            <field name="name">Signaturit</field>
+            <field name="res_model">signaturit.document</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_signaturit_document" action="signaturit_document_action" parent="base.menu_automation" sequence="20"/>
+
+</odoo>
